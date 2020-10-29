@@ -16,3 +16,7 @@ use App\Http\Controllers\CurrencyController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('currencies', [CurrencyController::class, 'list']);
+
+Route::get('currency/{rate:iso_char_code}', [CurrencyController::class, 'show']);
